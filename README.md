@@ -18,7 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Para poder hacer un uso correcto de esta librería en tu código de Ruby, se tendrá que incluir el siguiente fichero:
+require "prct10"
+
+Para la colaboracion en la escritura del código hay que instalar las dependencias de la librería ejecutando el comando:
+
+   bundle
 
 ## Contributing
 
