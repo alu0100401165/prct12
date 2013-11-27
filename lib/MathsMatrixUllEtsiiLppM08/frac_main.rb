@@ -55,10 +55,14 @@ class Fraccion
   end
   
    def +(other)
-    x=(@n*other.d)+(@d*other.n)
-    y=(@d*other.d)
-    max_ = gcd(x,y)
-    Fraccion.new(x/max_, y/max_)
+     if !(other.is_a? Fraccion)
+       other=Fraccion.new(other,1)
+     end
+       
+      x=(@n*other.d)+(@d*other.n)
+      y=(@d*other.d)
+      max_ = gcd(x,y)
+      Fraccion.new(x/max_, y/max_)
  
   end
   
@@ -158,6 +162,10 @@ class Fraccion
    
   def to_f
    return @n.to_f/@d.to_f 
+ end
+ 
+ def coerce(other)
+  [self,other]
  end
 end  
 
