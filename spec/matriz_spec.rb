@@ -24,6 +24,9 @@ describe Matriz do
     @m11= MatrizDispersa.new([[0,0,1],[0,2,0],[3,0,0]])
     @m12= MatrizDispersa.new(([[Fraccion.new(0,1),Fraccion.new(2,3)],[Fraccion.new(0,1),Fraccion.new(0,1)]]))
     
+    @m13= MatrizDensa.new([[Fraccion.new(1,1),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]])
+    @m14= MatrizDispersa.new(([[Fraccion.new(1,2),Fraccion.new(0,1)],[Fraccion.new(0,1),Fraccion.new(0,1)]]))
+    @m15 = MatrizDensa.new([[1,1],[1,1]])
   end
 
   describe "# Se crean las matrices del tamanio especificado e inicialidas" do
@@ -91,6 +94,8 @@ describe Matriz do
     it "Sumar matrices" do
       ((@m3 + @m11).should == MatrizDensa.new([[2,0,2],[3,2,0],[8,1,1]]))
       ((@m7 + @m12).should == MatrizDensa.new([[Fraccion.new(1,2),Fraccion.new(1,1)],[Fraccion.new(1,4),Fraccion.new(1,5)]]))
+      ((@m13 + @m14).should == MatrizDensa.new([[Fraccion.new(3,2),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]]))
+      ((@m14 + @m15).should == MatrizDensa.new([[Fraccion.new(3,2),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]]))
     end 
     
     it "Maximo" do

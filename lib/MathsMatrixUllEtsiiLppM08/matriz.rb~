@@ -1,3 +1,21 @@
+# = matriz.rb
+#
+# Autor:: Juan Francisco Chávez González, Rafael Abadía Reyes
+#
+# === Clase Matriz
+#
+# Definición de la clase _Matriz_ compuesta por
+# * metodo initialize
+# * metodo +
+# * metodo -
+# * metodo *
+# * metodo x
+# * metodo ==
+# * metodo det
+# * metodo tras
+# * metodo to_s
+#
+
 #! /usr/local/ruby/bin/ruby 
 
 require './lib/MathsMatrixUllEtsiiLppM08/frac_main.rb'
@@ -78,8 +96,8 @@ class Matriz
   def +(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       aux = Matriz.new(@matriz)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
+      (@nFil).times do |i|
+        (@mCol).times do |j|
           aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
         end
       end
@@ -93,8 +111,8 @@ class Matriz
   def -(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       aux = Matriz.new(@matriz)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
+      (@nFil).times do |i|
+        (@mCol).times do |j|
           aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
         end
       end
@@ -108,9 +126,9 @@ class Matriz
   def *(mat)
     if (@mCol == mat.nFil)
       result = Array.new
-      for i in 0...@nFil do
+      (@nFil).times do |i|
         result[i] = Array.new
-        for j in 0...mat.mCol do
+        (mat.mCol).times do |j|
 	  if(@matriz[i][j].class==Fraccion)
            result[i][j] = Fraccion.new(0,1)
 	  else
@@ -121,9 +139,9 @@ class Matriz
 
       aux = Matriz.new(result)
 
-      for i in 0...@nFil do
-        for j in 0...mat.mCol do
-          for z in 0...@mCol do
+      (@nFil).times do |i|
+        (mat.mCol).times do |j|
+          (@mCol).times do |z|
             aux.matriz[i][j] += @matriz[i][z] * mat.matriz[z][j]
           end
         end

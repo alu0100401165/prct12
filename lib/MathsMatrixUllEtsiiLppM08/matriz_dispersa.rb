@@ -1,3 +1,18 @@
+# = matriz_dispersa.rb
+#
+# Autor:: Juan Francisco Chávez González, Rafael Abadía Reyes
+# Web:: https://github.com/alu0100401165/prct11
+#
+# === Clase MatrizDispersa
+#
+# Definición de la clase _MatrizDispersa_ compuesta por
+# * metodo initialize
+# * metodo max
+# * metodo min
+# * metodo to_dispersa
+#
+
+
 require './lib/MathsMatrixUllEtsiiLppM08/matriz.rb'
 require './lib/MathsMatrixUllEtsiiLppM08/matriz_densa.rb'
 
@@ -52,7 +67,7 @@ module MathsMatrixUllEtsiiLppM08
 		
 	    def max
 	      maximo=@val[0]
-	      for i in 0...@nz do
+	      (@nz).times do |i|
 		if(maximo<@val[i])
 		   maximo=@val[i]
 		end
@@ -62,7 +77,7 @@ module MathsMatrixUllEtsiiLppM08
 	    
 	    def min
 	      minimo=@val[0]
-	      for i in 0...@nz do
+	      (@nz).times do |i|
 		if(minimo>@val[i])
 		   minimo=@val[i]
 		end
