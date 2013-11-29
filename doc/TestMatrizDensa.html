@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class TestMatrizDensa - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>test/tc_matrices.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Test::Unit::TestCase
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-setup">#setup</a>
+    
+    <li ><a href="#method-i-test_failure">#test_failure</a>
+    
+    <li ><a href="#method-i-test_simple">#test_simple</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./MathsMatrixUllEtsiiLppM08_gemspec.html">MathsMatrixUllEtsiiLppM08.gemspec</a>
+  
+    <li class="file"><a href="./MathsMatrixUllEtsiiLppM08_gemspec~.html">MathsMatrixUllEtsiiLppM08.gemspec~</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./README_md~.html">README.md~</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./Rakefile~.html">Rakefile~</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./lib/MathsMatrixUllEtsiiLppM08_rb~.html">MathsMatrixUllEtsiiLppM08.rb~</a>
+  
+    <li class="file"><a href="./lib/MathsMatrixUllEtsiiLppM08/matriz_rb~.html">matriz.rb~</a>
+  
+    <li class="file"><a href="./lib/MathsMatrixUllEtsiiLppM08/matriz_densa_rb~.html">matriz_densa.rb~</a>
+  
+    <li class="file"><a href="./lib/MathsMatrixUllEtsiiLppM08/matriz_dispersa_rb~.html">matriz_dispersa.rb~</a>
+  
+    <li class="file"><a href="./spec/matriz_spec_rb~.html">matriz_spec.rb~</a>
+  
+    <li class="file"><a href="./test/tc_matrices_rb~.html">tc_matrices.rb~</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Fraccion.html">Fraccion</a>
+  
+    <li><a href="./MathsMatrixUllEtsiiLppM08.html">MathsMatrixUllEtsiiLppM08</a>
+  
+    <li><a href="./MathsMatrixUllEtsiiLppM08/MatrizDensa.html">MathsMatrixUllEtsiiLppM08::MatrizDensa</a>
+  
+    <li><a href="./MathsMatrixUllEtsiiLppM08/MatrizDispersa.html">MathsMatrixUllEtsiiLppM08::MatrizDispersa</a>
+  
+    <li><a href="./Matriz.html">Matriz</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./TestMatrizDensa.html">TestMatrizDensa</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TestMatrizDensa</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File test/tc_matrices.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
+
+  <span class="ruby-ivar">@m1</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">1</span>,<span class="ruby-value">3</span>],[<span class="ruby-value">2</span>,<span class="ruby-value">0</span>]])
+  <span class="ruby-ivar">@m2</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">2</span>,<span class="ruby-value">1</span>],[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>]])
+  <span class="ruby-ivar">@m3</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">2</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>],[<span class="ruby-value">3</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>],[<span class="ruby-value">5</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>]])
+  <span class="ruby-ivar">@m4</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">4</span>,<span class="ruby-value">1</span>,<span class="ruby-value">6</span>],[<span class="ruby-value">2</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>]])
+  
+  <span class="ruby-ivar">@m5</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_f</span>,<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">3</span>).<span class="ruby-identifier">to_f</span>],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">4</span>).<span class="ruby-identifier">to_f</span>,<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">5</span>).<span class="ruby-identifier">to_f</span>]])
+  <span class="ruby-ivar">@m6</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">to_f</span>,<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">3</span>).<span class="ruby-identifier">to_f</span>],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">4</span>).<span class="ruby-identifier">to_f</span>,<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">4</span>,<span class="ruby-value">5</span>).<span class="ruby-identifier">to_f</span>]])
+  
+  <span class="ruby-ivar">@m7</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">3</span>)],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">4</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">5</span>)]])
+  <span class="ruby-ivar">@m8</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">3</span>)],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">4</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">4</span>,<span class="ruby-value">5</span>)]])
+  
+  <span class="ruby-ivar">@m9</span> =  <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">1</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">1</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">1</span>)]])
+  <span class="ruby-ivar">@m10</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">5</span>)],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">11</span>,<span class="ruby-value">40</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">49</span>,<span class="ruby-value">150</span>)]])
+  
+  <span class="ruby-ivar">@m11</span>= <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">1</span>],[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>,<span class="ruby-value">0</span>],[<span class="ruby-value">3</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>]])
+  <span class="ruby-ivar">@m12</span>= <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(([[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>,<span class="ruby-value">1</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">3</span>)],[<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>,<span class="ruby-value">1</span>),<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>,<span class="ruby-value">1</span>)]]))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup-method -->
+
+    
+      <div id="method-i-test_failure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_failure</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_failure-source">
+            <pre><span class="ruby-comment"># File test/tc_matrices.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_failure</span>
+
+  <span class="ruby-identifier">assert_not_equal</span>(<span class="ruby-ivar">@m9</span>,<span class="ruby-ivar">@m7</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@m8</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_failure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_failure-method -->
+
+    
+      <div id="method-i-test_simple" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_simple</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_simple-source">
+            <pre><span class="ruby-comment"># File test/tc_matrices.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_simple</span>
+             
+ <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@m9</span>, <span class="ruby-ivar">@m7</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@m8</span>)
+     
+ <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>([[<span class="ruby-value">-1</span>,<span class="ruby-value">2</span>],[<span class="ruby-value">2</span>,<span class="ruby-value">-1</span>]]), <span class="ruby-ivar">@m1</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@m2</span>)
+ 
+ <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@m11</span>.<span class="ruby-identifier">max</span>, <span class="ruby-value">3</span>)
+ 
+ <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@m11</span>.<span class="ruby-identifier">min</span>, <span class="ruby-value">1</span>)
+ 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_simple-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_simple-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
