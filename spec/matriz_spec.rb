@@ -27,6 +27,7 @@ describe Matriz do
     @m13= MatrizDensa.new([[Fraccion.new(1,1),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]])
     @m14= MatrizDispersa.new(([[Fraccion.new(1,2),Fraccion.new(0,1)],[Fraccion.new(0,1),Fraccion.new(0,1)]]))
     @m15 = MatrizDensa.new([[1,1],[1,1]])
+    @m16 = MatrizDensa.new([[1,2,3],[4,5,6],[7,8,9]])
   end
 
   describe "# Se crean las matrices del tamanio especificado e inicialidas" do
@@ -109,5 +110,9 @@ describe Matriz do
       end 
     
   end
-  
+ describe "Uso de bloques" do
+    it "Metodo encontrar" do
+      @m16.encontrar{|e| (e*e)>=16}.should ==[1,0]
+    end
+  end
 end
