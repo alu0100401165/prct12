@@ -1,6 +1,26 @@
 # MathsMatrixUllEtsiiLppM08
 
-La jerarquía de clases para implementar las matrices densas y dispersas será: Una clase base Matriz de la cual heredarán de ella dos clases, MatrizDispersa y MatrizDensa. 
+Partiendo de la practica anterior, vamos a incluir las siguientes modificaciones:
+
+  - Usaremos las dependencias de la Gema (Gemnasium).
+  - Hemos diseñado e implementado un Lenguaje de Dominio Específico (Domain Specific Language - DSL) para realizar algunas operaciones.
+
+## Program options
+
+rake dsl		# Ejecutar MatrizDSL practica 12
+
+rake bin    # Ejecutar programa
+
+rake doc    # Ejecutar con documentacion
+
+rake spec    # Run RSpec con las diferentes expectativas
+
+rake test    # Ejecutar pruebas unitarias
+
+rake    # Ejecuta la tarea por defecto $rake spec
+
+rake -T    # Muestra las distintas opciones del rake para el programa implementado
+ 
 
 ## Installation
 

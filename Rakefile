@@ -4,10 +4,10 @@ $:.unshift File.dirname(__FILE__) + 'lib'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 
-task :default => :tu
+task :default => :spec
 
 desc "Pruebas unitarias de la clase Matriz"
-task :tu do
+task :spec do
         sh "rspec -I. spec/matriz_spec.rb"
 end
 
@@ -24,4 +24,9 @@ end
 desc "Ejecucion pruebas unitarias"
 task :test do
  sh "ruby -I./lib test/tc_matrices.rb"
+end
+
+desc "Run clase matriz en versión DSL.rb"
+task :dsl do
+  sh "ruby lib/MathsMatrixUllEtsiiLppM08/matricesDSL.rb"
 end
