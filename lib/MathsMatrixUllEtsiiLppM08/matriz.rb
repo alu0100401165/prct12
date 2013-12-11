@@ -83,7 +83,15 @@ class Matriz
   
   # Metodo para multiplicar una matriz por un escalar
   def x(escalar)
-    aux = Matriz.new(@matriz)
+      maux=Array.new(@nFil) { Array.new(@mCol) }
+      
+       (@nFil).times do |i|
+        (@mCol).times do |j|
+          maux[i][j] = @matriz[i][j]
+        end
+      end
+      
+      aux = Matriz.new(maux)
     for i in 0...@nFil do
       for j in 0...@mCol do
         aux.matriz[i][j] = @matriz[i][j] * escalar
@@ -95,7 +103,15 @@ class Matriz
   #Metodo para sumar dos matrices
   def +(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
-      aux = Matriz.new(@matriz)
+      maux=Array.new(@nFil) { Array.new(@mCol) }
+      
+       (@nFil).times do |i|
+        (@mCol).times do |j|
+          maux[i][j] = @matriz[i][j]
+        end
+      end
+      
+      aux = Matriz.new(maux)
       (@nFil).times do |i|
         (@mCol).times do |j|
           aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
@@ -110,7 +126,16 @@ class Matriz
   # Metodo para restar dos matrices
   def -(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
-      aux = Matriz.new(@matriz)
+      
+      maux=Array.new(@nFil) { Array.new(@mCol) }
+      
+       (@nFil).times do |i|
+        (@mCol).times do |j|
+          maux[i][j] = @matriz[i][j]
+        end
+      end
+      
+      aux = Matriz.new(maux)
       (@nFil).times do |i|
         (@mCol).times do |j|
           aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
