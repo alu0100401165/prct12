@@ -2,6 +2,7 @@ require './lib/MathsMatrixUllEtsiiLppM08/matriz.rb'
 require './lib/MathsMatrixUllEtsiiLppM08/matriz_densa.rb'
 require './lib/MathsMatrixUllEtsiiLppM08/matriz_dispersa.rb'
 require './lib/MathsMatrixUllEtsiiLppM08/frac_main.rb'
+require './lib/MathsMatrixUllEtsiiLppM08/matricesDSL.rb'
 require 'rspec'
 include MathsMatrixUllEtsiiLppM08
 describe Matriz do
@@ -113,6 +114,37 @@ describe Matriz do
  describe "Uso de bloques" do
     it "Metodo encontrar" do
       @m16.encontrar{|e| (e*e)>=16}.should ==[1,0]
+    end
+  end
+  
+describe "Prueba MatrizDSL" do
+    it "Suma con el DSL" do
+      @dsl1 = MatrizDSL.new("suma") do
+        operando([[1,1],[1,1]])
+        operando([[1,1],[1,1]])
+      end
+      @dsl1.operar.should == [[2,2],[2,2]]
+    end
+    it "Resta con el DSL" do
+      @dsl2 = MatrizDSL.new("resta") do
+        operando([[2,7],[3,2]])
+        operando([[1,3],[4,1]])
+      end
+      @dsl2.operar.should == [[1,4],[-1,1]]
+    end
+    it "Multiplicacion con el DSL" do
+      @dsl3 = MatrizDSL.new("multiplicacion") do
+        operando([[1,3],[2,0]])
+        operando([[2,1],[0,1]])
+      end
+      @dsl3.operar.should == [[2,4],[4,2]]
+    end
+    it "Error DSL" do
+      @errorDSL = MatrizDSL.new("Error") do
+        operando([[2,7],[3,2]])
+        operando([[1,3],[4,1]])
+      end
+      @errorDSL.operar.should == nil
     end
   end
 end

@@ -4,18 +4,135 @@ require './lib/MathsMatrixUllEtsiiLppM08/matriz_dispersa.rb'
 require './lib/MathsMatrixUllEtsiiLppM08/frac_main.rb'
 include MathsMatrixUllEtsiiLppM08
 
+module MathsMatrixUllEtsiiLppM08
+  
 class MatrizDSL < Matriz
-    attr_reader :operacion, :salida, :tipo_m1, :tipo_m2, :m1, :m2, :mr #densa o dispersa
-    
-    def initialize (operador) #Estructura de datos de la matriz DSL
-      @operacion = operador.downcase
-      @tipo_m1,@tipo_m2 = nil,nil
-      @m1,@m2 = nil, nil
-      @salida = "console" #la salida puede ser por fichero o por consola, esta opcion se ejecuta por defecto
- 
-    end 
+  attr_accessor :resultado
 
-    def option(cadena) #Recoge la opcion de tipo de matriz
+  def initialize(tipo_operacion, &block)
+
+      @operandos = []
+      @resultado = nil
+      @tipo_resultado = :densa
+      @operacion = :nada
+      @salida = "console" 
+      @tipo_m1,@tipo_m2 = nil,nil
+      
+      case tipo_operacion
+        when "suma"
+          @operacion = :suma
+        when "resta"
+          @operacion = :resta
+        when "multiplicacion"
+          @operacion = :multiplicacion
+	 when "traspuesta"
+          @operacion = :traspuesta
+	 when "maximo"
+          @operacion = :maximo 
+	 when "minimo"
+          @operacion = :minimo
+        else
+          puts "Tipo de operacion inválido", tipo_operacion
+      end
+
+      if block_given?
+        if block.arity == 1
+          yield self
+        else
+          instance_eval &block
+        end
+      end
+  end
+  
+
+   def operando(mat) 
+      if ( @operandos[0].is_a?(MatrizDensa) or @operandos[1].is_a?(MatrizDispersa)) == false
+	if @tipo_m1=="densa"
+	  @operandos << MatrizDensa.new(mat)
+	else
+	  @operandos << MatrizDispersa.new(mat)
+	end
+      else
+	if @tipo_m2=="densa"
+	  @operandos << MatrizDensa.new(mat)
+	  
+	else
+	  @operandos << MatrizDispersa.new(mat)
+	  
+	end
+      end
+    end
+  
+  def operar
+    case @operacion
+      when :suma
+        @resultado = @operandos[0]+@operandos[1]
+        @resultado.matriz
+      when :resta
+        @resultado = @operandos[0]-@operandos[1]
+        @resultado.matriz
+      when :multiplicacion
+        @resultado = @operandos[0]*@operandos[1]
+        @resultado.matriz
+      when :traspuesta
+        @resultado = @operandos[0].tras
+        @resultado.matriz
+      when :maximo
+        @resultado = @operandos[0].max
+      when :minimo
+        @resultado = @operandos[0].min
+      else
+        puts "Tipo de operacion incorrecta", @operacion
+      end
+      
+  end
+  
+  def tipo_salida(op)
+    @salida=op
+       if @salida == "fichero"
+	  mats=[@operandos[0],@operandos[1],@resultado]
+	  mats.each do |i|
+	    crear_fichero(i)
+	  end
+	  puts "Fichero <salida.txt> creado"
+	end
+	
+	if @salida == "console"
+	  puts self
+	end
+  end
+  
+   def to_s # Muestra por pantalla el valor del objeto
+      out_string = "";
+      control=0
+      out_string << @operandos[0].to_s
+      case @operacion
+	when :suma
+	  out_string << "+\n"
+	when :resta
+	  out_string << "-\n"
+	when :multiplicacion
+	  out_string << "*\n"
+	when :traspuesta
+	  out_string << "traspuesta\n"
+	  control=1
+	when :maximo
+	  out_string << "elemento max\n"
+	  control=1
+	when :minimo
+	  out_string << "elemento min\n"
+	  control=1
+      end
+      if control==0
+	out_string << @operandos[1].to_s
+      end
+      out_string << "=\n"
+      out_string << @resultado.to_s
+      out_string
+    end
+    
+    
+  def option(cadena) 
       case cadena.downcase
       when "densas"
 	  @tipo_m1,@tipo_m2 = "densa","densa"
@@ -40,81 +157,7 @@ class MatrizDSL < Matriz
       end
     end
     
-    def to_s # Muestra por pantalla el valor del objeto
-      out_string = "";
-      control=0
-      out_string << @m1.to_s
-      case @operacion
-	when "suma","sum"
-	  out_string << "+\n"
-	when "resta","res"
-	  out_string << "-\n"
-	when "producto","multiplicacion","multi"
-	  out_string << "*\n"
-	when "traspuesta","tras"
-	  out_string << "traspuesta\n"
-	  control=1
-	when "maximo","max"
-	  out_string << "elemento max\n"
-	  control=1
-	when "minimo","min"
-	  out_string << "elemento min\n"
-	  control=1
-      end
-      if control==0
-	out_string << @m2.to_s
-      end
-      out_string << "=\n"
-      out_string << @mr.to_s
-      out_string
-    end
-    
-   
-    def operand(contenido) #construye una matriz a partir del array que recoge por parámetro
-      if (@m1.is_a?(MatrizDensa) or @m1.is_a?(MatrizDispersa)) == false
-	if @tipo_m1=="densa"
-	  @m1= MatrizDensa.new(contenido)
-	else
-	  @m1= MatrizDispersa.new(contenido)
-	end
-      else
-	if @tipo_m2=="densa"
-	  @m2= MatrizDensa.new(contenido)
-	  
-	else
-	  @m2= MatrizDispersa.new(contenido)
-	  
-	end
-      end
-    end
-    
-    def operar # Realiza la operacion
-      case @operacion.downcase
-	when "suma","sum"
-	  @mr=@m1+@m2
-	when "resta","res"
-	  @mr=@m1-@m2
-	when "producto","multiplicacion","multi"
-	  @mr=@m1*@m2
-	when "traspuesta","tras"
-	  @mr=@m1.tras
-	when "maximo","max"
-	  @mr=@m1.max
-	when "minimo","min"
-	  @mr=@m1.min
-	else #error
-	  nil
-	end #case
-	if @salida == "fichero"
-	  mats=[@m1,@m2,@mr]
-	  mats.each do |i|
-	    crear_fichero(i)
-	  end
-	  puts "Fichero <salida.txt> creado"
-	end
-    end
-      
-    def fraccion (num,den) # Siguiendo la forma de programar DSL, renombramos esta funcion para que sea mas facil e intuintiva al programador
+    def fraccion (num,den) 
       Fraccion.new(num,den)
     end
     
@@ -144,19 +187,16 @@ class MatrizDSL < Matriz
 	  f.print "]\n"
 	end
       end
-    end
+  end  
+ end
+end  
 
-end
-
-
-
-# ----------------------------------------------------------------
- ejemplo = MatrizDSL.new("res")
- ejemplo.option "densas"
-# # ejemplo.option "fich"
-# ejemplo.operand [[1,ejemplo.fraccion(2,3),3],[4,5,6],[7,8,9]]
-ejemplo.operand [[1,2,3],[4,5,6],[7,8,100]]
-ejemplo.operand [[1,1,1],[1,1,1],[1,1,1]]
-ejemplo.operar
-
-puts ejemplo
+######################################
+    
+ ejemplo = MatrizDSL.new("suma") do
+        operando([[3,1],[5,1]])
+        operando([[1,1],[1,1]])
+	operar
+	tipo_salida("console")
+      end
+      
